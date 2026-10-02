@@ -4,4 +4,4 @@ Página inicial de uma plataforma fictícia de cursos online de tecnologia, feit
 
 Trabalho de faculdade: este projeto foi desenvolvido como atividade acadêmica para praticar display e Flexbox.
 
-Disciplina: https://img.shields.io/badge/Programa%C3%A7%C3%A3o%20Web%20Front--End-5b4ee8?style=for-the-badge
+ - **Disciplina:** $\color{#5b4ee8}{\textsf{\textbf{Programação Web Front-End}}}$
