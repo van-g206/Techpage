@@ -1,0 +1,676 @@
+/* =========================================================
+   Techpage - Vanessa Thamiris
+   ========================================================= */
+
+/* ---------- Variáveis e configurações gerais ---------- */
+:root {
+  --roxo: #5b4ee8;
+  --roxo-escuro: #3f33b8;
+  --roxo-claro: #ece9ff;
+  --verde-limao: #c8ff62;
+  --verde-limao-escuro: #a6e03a;
+  --escuro: #12141c;
+  --escuro-2: #232a45;
+  --fundo: #f7f7f2;
+  --borda: #e4e3dc;
+  --cinza: #5f6575;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  background: var(--fundo);
+  color: var(--escuro);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Space Grotesk", sans-serif;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  line-height: 1.1;
+}
+
+.container {
+  width: min(100% - 2rem, 75rem);
+  margin-inline: auto;
+}
+
+/* ---------- Botões ---------- */
+.botao {
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.botao-escuro {
+  background: var(--escuro);
+  color: #fff;
+}
+
+.botao-verde {
+  background: var(--verde-limao);
+  color: var(--escuro);
+}
+
+.botao-escuro:hover {
+  background: var(--roxo);
+}
+
+.botao-verde:hover {
+  background: var(--verde-limao-escuro);
+}
+
+/* ---------- Títulos de seção ---------- */
+.secao {
+  padding: 4rem 0;
+}
+
+/* display: block -> o span é inline por padrão, com block ele ocupa a linha toda
+   e o título (h2) fica embaixo dele */
+.secao-etiqueta {
+  display: block;
+  margin-bottom: 0.6rem;
+  color: var(--roxo);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ---------- 1. Cabeçalho ---------- */
+.cabecalho {
+  background: var(--escuro);
+  color: #fff;
+}
+
+.cabecalho-conteudo {
+  display: flex;                    /* deixa logo e botão lado a lado */
+  flex-direction: row;              /* horizontal (já é o padrão, escrevi pra ficar claro) */
+  justify-content: space-between;   /* logo na esquerda e botão no extremo direito */
+  align-items: center;              /* alinha os dois no meio da altura */
+  min-height: 5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-nome {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.logo-marca {
+  display: flex;
+  gap: 0.2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.45rem;
+  background: var(--roxo);
+  border-radius: 0.75rem;
+  transform: rotate(-4deg);
+}
+
+.logo-barra {
+  flex-grow: 1;                     /* a barra da esquerda cresce e ocupa o espaço dela */
+  background: var(--verde-limao);
+  border-radius: 0.18rem;
+}
+
+.logo-quadrados {
+  display: flex;
+  flex-direction: column;           /* os dois quadradinhos ficam um em cima do outro */
+  flex-grow: 1;
+  gap: 0.2rem;
+}
+
+.logo-quadrados span {
+  flex-grow: 1;
+  background: var(--verde-limao);
+  border-radius: 0.18rem;
+}
+
+/* ---------- 2. Menu de navegação ---------- */
+.menu {
+  background: #fff;
+  border-bottom: 1px solid var(--borda);
+}
+
+.menu-lista {
+  display: flex;
+  flex-wrap: wrap;                  /* se a tela for pequena os itens quebram linha */
+  justify-content: space-evenly;    /* espaço igual entre os itens e nas pontas */
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+/* display: inline-block -> o link continua na linha, mas aceita padding e altura certinho */
+.menu-link {
+  display: inline-block;
+  padding: 0.25rem 0;
+  color: var(--cinza);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.menu-link:hover,
+.menu-link.ativo {
+  color: var(--escuro);
+}
+
+.menu-link.ativo {
+  border-bottom: 3px solid var(--roxo);
+}
+
+/* ---------- 3. Banner principal ---------- */
+.banner {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;   /* texto na esquerda e card de código na direita */
+  align-items: center;
+  gap: 3rem;
+  min-height: 30rem;                /* maior que os 300px mínimos pedidos */
+  margin: 2rem 0;
+  padding: 4rem;
+  background: linear-gradient(135deg, var(--escuro), var(--escuro-2));
+  color: #fff;
+  border-radius: 2rem;
+}
+
+/* bolinhas de pontos no fundo */
+.banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.09) 1px, transparent 1px);
+  background-size: 21px 21px;
+  pointer-events: none;
+}
+
+.banner-luz {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.banner-luz-esquerda {
+  bottom: -13rem;
+  left: -10rem;
+  width: 27rem;
+  height: 27rem;
+  background: rgba(91, 78, 232, 0.3);
+}
+
+.banner-luz-direita {
+  top: -12rem;
+  right: -8rem;
+  width: 28rem;
+  height: 28rem;
+  background: rgba(200, 255, 98, 0.14);
+}
+
+.banner-texto {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;           /* etiqueta, título, texto e botão um embaixo do outro */
+  align-items: flex-start;          /* tudo colado na esquerda */
+  flex: 1.15 1 0;                   /* flex: grow shrink basis -> a coluna do texto é um pouco maior */
+}
+
+.banner-etiqueta {
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 1.1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  color: var(--verde-limao);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.banner h1 {
+  max-width: 40rem;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  line-height: 1.15;
+}
+
+/* display: inline -> o span fica dentro da frase do título, sem quebrar linha */
+.destaque {
+  display: inline;
+  color: var(--verde-limao);
+}
+
+.banner-texto p {
+  max-width: 36rem;
+  margin: 1.5rem 0 2.2rem;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.banner-visual {
+  position: relative;
+  z-index: 1;
+  flex: 0.85 1 0;
+  max-width: 28rem;
+}
+
+.codigo {
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1.5rem;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.25);
+  transform: rotate(2deg);
+}
+
+.codigo-topo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bolinha {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+}
+
+.bolinha-vermelha { background: #ff9c84; }
+.bolinha-amarela  { background: #ffe36e; }
+.bolinha-verde    { background: #83e2c2; }
+
+.codigo-arquivo {
+  margin-left: 0.5rem;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.75rem;
+}
+
+.codigo-corpo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem 1.5rem 3.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "DM Mono", monospace;
+  font-size: 0.9rem;
+}
+
+.recuo  { padding-left: 1.5rem; }
+.roxo   { color: #c8b8ff; }
+.azul   { color: #9edcff; }
+.verde  { color: var(--verde-limao); }
+.coral  { color: #ff9c84; }
+
+.conquista {
+  position: absolute;
+  bottom: -1.8rem;
+  left: -2rem;
+  display: flex;
+  flex-direction: column-reverse;   /* no HTML o nome vem primeiro, mas aqui o texto pequeno aparece em cima */
+  gap: 0.2rem;
+  padding: 1rem 1.2rem;
+  background: #fff;
+  color: var(--escuro);
+  border-radius: 1rem;
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.35);
+}
+
+.conquista small {
+  color: var(--cinza);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.conquista strong {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.1rem;
+}
+
+/* ---------- 4. Área de cursos ---------- */
+.secao-topo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;   /* título na esquerda e descrição na direita */
+  align-items: flex-end;            /* os dois ficam alinhados pela parte de baixo */
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.cursos {
+  display: flex;
+  flex-wrap: wrap;                  /* os cards quebram de linha quando não cabem */
+  justify-content: flex-start;
+  align-items: stretch;             /* os cards da mesma linha ficam com a mesma altura */
+  align-content: flex-start;        /* as linhas de cards ficam juntas no topo */
+  gap: 1.25rem;
+}
+
+.curso {
+  display: flex;
+  flex-direction: column;
+  /* flex: 1 1 300px -> cada card quer ter 300px (basis), cresce (grow) pra preencher a linha
+     e pode encolher (shrink). Por isso eles se adaptam sozinhos ao tamanho da tela */
+  flex: 1 1 300px;
+  min-height: 17rem;
+  padding: 1.8rem;
+  background: var(--tom);           /* cada card pega uma cor pastel (definida abaixo) */
+  border: 1px solid rgba(18, 20, 28, 0.08);
+  border-radius: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.curso:nth-child(1) { --tom: #f1ffd4; }
+.curso:nth-child(2) { --tom: #e1f3ff; }
+.curso:nth-child(3) { --tom: #ece7ff; }
+.curso:nth-child(4) { --tom: #ffe8e1; }
+.curso:nth-child(5) { --tom: #d9f6ec; }
+.curso:nth-child(6) { --tom: #fff3c4; }
+
+.curso:hover {
+  transform: translateY(-0.35rem);
+  box-shadow: 0 1rem 2rem rgba(23, 27, 36, 0.08);
+}
+
+.curso-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.curso-numero {
+  display: flex;
+  justify-content: center;          /* centraliza o número na horizontal */
+  align-items: center;              /* e na vertical */
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.cor-1 { background: #c8ff62; }
+.cor-2 { background: #9edcff; }
+.cor-3 { background: #c8b8ff; }
+.cor-4 { background: #ff9c84; }
+.cor-5 { background: #83e2c2; }
+.cor-6 { background: #ffe36e; }
+
+.curso-categoria {
+  padding: 0.35rem 0.8rem;
+  background: #fff;
+  border-radius: 999px;
+  color: var(--roxo-escuro);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.curso h3 {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
+
+.curso p {
+  margin-top: 0.7rem;
+  color: var(--cinza);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.curso-link {
+  align-self: flex-start;           /* o link não estica a largura do card toda */
+  margin-top: auto;                 /* empurra o link pro final do card */
+  padding-top: 1.5rem;
+  color: var(--roxo);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.curso-link:hover {
+  color: var(--roxo-escuro);
+}
+
+/* ---------- Professores ---------- */
+.faixa-clara {
+  background: var(--roxo-claro);
+}
+
+.professores {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.professor {
+  display: flex;
+  flex-direction: column;           /* foto, nome, área e descrição um embaixo do outro */
+  align-items: center;              /* tudo centralizado na horizontal */
+  flex: 1 1 260px;
+  padding: 2rem 1.5rem;
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-radius: 1.5rem;
+  text-align: center;
+}
+
+.professor-1,.professor-2,.professor-3 {  /*Aqui uso a mesma configuração para os 3 professores  usando a virgula */
+  display: flex;
+  justify-content: center;          
+  align-items: center;              
+  width: 5rem;
+  height: 5rem;
+  border-radius: 999px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.professor h3 {
+  margin-top: 1.2rem;
+  font-size: 1.3rem;
+}
+
+.professor-area {
+  margin-top: 0.6rem;
+  padding: 0.35rem 0.9rem;
+  background: var(--roxo-claro);
+  border-radius: 999px;
+  color: var(--roxo-escuro);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.professor p {
+  margin-top: 0.8rem;
+  color: var(--cinza);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* ---------- 5. Área de estatísticas ---------- */
+.estatisticas {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, var(--roxo), var(--roxo-escuro));
+  color: #fff;
+}
+
+.estatisticas .secao-etiqueta {
+  color: var(--verde-limao);
+}
+
+.estatisticas-titulo {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.estatisticas-lista {
+  display: flex;
+  flex-wrap: wrap;                  /* no celular os blocos quebram linha (2 por linha) */
+  align-items: center;              /* todos os blocos alinhados pelo centro */
+  gap: 1rem;
+}
+
+.estatistica {
+  flex: 1 1 160px;                  /* grow shrink basis: todos começam com 160px e dividem o espaço que sobra */
+  padding: 2.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1.5rem;
+  text-align: center;
+}
+
+.estatistica strong {
+  display: block;
+  color: var(--verde-limao);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.estatistica span {
+  display: block;
+  margin-top: 0.4rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* cada bloco mostra uma propriedade diferente de item flex */
+.estatistica-grow-1 { flex-grow: 1; }          /* bloco 1: cresce 1 parte do espaço livre */
+.estatistica-grow-2 { flex-grow: 1.3; }        /* bloco 2: cresce um pouquinho mais, então fica um pouco mais largo */
+.estatistica-shrink { flex-shrink: 0; }        /* bloco 3: não encolhe, mesmo se faltar espaço */
+.estatistica-self   { align-self: stretch; }   /* bloco 4: ignora o align-items: center do container e estica na altura toda */
+
+/* no computador o wrap sai pra todos ficarem na mesma linha e o flex-shrink funcionar */
+@media (min-width: 900px) {
+  .estatisticas-lista {
+    flex-wrap: nowrap;
+  }
+}
+
+/* ---------- 6. Rodapé ---------- */
+.rodape {
+  padding: 3rem 0 2rem;
+  background: var(--escuro);
+  color: #fff;
+}
+
+.rodape-topo {
+  display: flex;
+  flex-direction: row-reverse;      /* inverte: as redes (1º no HTML) vão pra direita e o contato pra esquerda */
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;              /* tudo centralizado na vertical */
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.rodape-redes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.rodape-redes a {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.rodape-nome {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.rodape-email {
+  display: block;                   /* o e-mail (link inline) vai pra linha de baixo do nome */
+  margin-top: 0.4rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.9rem;
+}
+
+.rodape-redes a:hover,
+.rodape-email:hover {
+  color: var(--verde-limao);
+}
+
+.rodape-direitos {
+  padding-top: 1.5rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.75rem;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 900px) {
+  /* no tablet e no celular o banner vira uma coluna só: texto em cima e card de código embaixo */
+  .banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3.5rem;
+    min-height: 300px;
+    padding: 3rem 1.5rem;
+  }
+
+  .banner-texto,
+  .banner-visual {
+    flex: none;                     /* na coluna não preciso mais do grow/basis das duas colunas */
+  }
+
+  .banner-visual {
+    width: 100%;
+    max-width: 28rem;
+    margin-bottom: 1.8rem;          /* espaço pro cartão "Próxima conquista" que sai pra fora do card */
+  }
+
+  .conquista {
+    left: -0.5rem;                  /* não deixa o cartão sair da tela */
+  }
+}
+
+@media (max-width: 600px) {
+  .secao {
+    padding: 2.5rem 0;
+  }
+  .rodape-topo {
+    flex-direction: column;         /* no celular o rodapé empilha */
+    text-align: center;
+  }
+
+  .rodape-redes {
+    order: -1;                      /* order negativo: as redes sociais sobem pro topo do rodapé */
+    justify-content: center;
+  }
+}

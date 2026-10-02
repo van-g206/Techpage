@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Techpage - Cursos online de tecnologia</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Manrope:wght@400;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 1. Cabeçalho -->
+  <header class="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a class="logo" href="#home">
+        <span class="logo-marca">
+          <span class="logo-barra"></span>
+          <span class="logo-quadrados">
+            <span></span>
+            <span></span>
+          </span>
+        </span>
+        <span class="logo-nome">Techpage</span>
+      </a>
+      <a class="botao botao-escuro" href="#contato">Entrar</a>
+    </div>
+  </header>
+
+  <!-- 2. Menu de navegação -->
+  <nav class="menu">
+    <div class="container">
+      <ul class="menu-lista">
+        <li><a class="menu-link ativo" href="#home">Home</a></li>
+        <li><a class="menu-link" href="#cursos">Cursos</a></li>
+        <li><a class="menu-link" href="#professores">Professores</a></li>
+        <li><a class="menu-link" href="#contato">Contato</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- 3. Banner principal -->
+    <section id="home" class="container">
+      <div class="banner">
+        <div class="banner-luz banner-luz-esquerda"></div>
+        <div class="banner-luz banner-luz-direita"></div>
+
+        <div class="banner-texto">
+          <span class="banner-etiqueta">Aprenda. Pratique. Evolua.</span>
+          <h1>Tecnologia para quem quer <span class="destaque">ir além.</span></h1>
+          <p>Cursos práticos, professores do mercado e uma comunidade que acelera sua carreira em tecnologia.</p>
+          <a class="botao botao-verde" href="#cursos">Conheça os Cursos →</a>
+        </div>
+
+        <div class="banner-visual">
+          <div class="codigo">
+            <div class="codigo-topo">
+              <span class="bolinha bolinha-vermelha"></span>
+              <span class="bolinha bolinha-amarela"></span>
+              <span class="bolinha bolinha-verde"></span>
+              <span class="codigo-arquivo">future.tsx</span>
+            </div>
+            <div class="codigo-corpo">
+              <p><span class="roxo">const</span> <span class="azul">seuFuturo</span> = {</p>
+              <p class="recuo">curiosidade: <span class="verde">true</span>,</p>
+              <p class="recuo">potencial: <span class="coral">"infinito"</span></p>
+              <p>}</p>
+            </div>
+          </div>
+
+          <div class="conquista">
+            <strong>Nova carreira</strong>
+            <small>Próxima conquista</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Área de cursos -->
+    <section id="cursos" class="container secao">
+      <div class="secao-topo">
+        <div>
+          <span class="secao-etiqueta">Explore possibilidades</span>
+          <h2>Cursos em destaque</h2>
+        </div>
+      </div>
+
+      <div class="cursos">
+        <article class="curso">
+          <div class="curso-topo">
+            <span class="curso-numero cor-1">01</span>
+            <span class="curso-categoria">Desenvolvimento</span>
+          </div>
+          <h3>Desenvolvimento Web</h3>
+          <p>Crie aplicações modernas e responsivas com HTML, CSS, JavaScript e React.</p>
+          <a class="curso-link" href="#contato">Saiba Mais →</a>
+        </article>
+
+        <article class="curso">
+          <div class="curso-topo">
+            <span class="curso-numero cor-2">02</span>
+            <span class="curso-categoria">Programação</span>
+          </div>
+          <h3>Python do Zero</h3>
+          <p>Aprenda lógica de programação e desenvolva seus primeiros projetos com Python.</p>
+          <a class="curso-link" href="#contato">Saiba Mais →</a>
+        </article>
+
+        <article class="curso">
+          <div class="curso-topo">
+            <span class="curso-numero cor-3">03</span>
+            <span class="curso-categoria">Dados</span>
+          </div>
+          <h3>Ciência de Dados</h3>
+          <p>Transforme dados em decisões usando análise, visualização e machine learning.</p>
+          <a class="curso-link" href="#contato">Saiba Mais →</a>
+        </article>
+
+        <article class="curso">
+          <div class="curso-topo">
+            <span class="curso-numero cor-4">04</span>
+            <span class="curso-categoria">Design</span>
+          </div>
+          <h3>UX/UI Design</h3>
+          <p>Projete experiências digitais intuitivas, bonitas e centradas nas pessoas.</p>
+          <a class="curso-link" href="#contato">Saiba Mais →</a>
+        </article>
+
+        <article class="curso">
+          <div class="curso-topo">
+            <span class="curso-numero cor-5">05</span>
+            <span class="curso-categoria">Infraestrutura</span>
+          </div>
+          <h3>Cloud Computing</h3>
+          <p>Domine os fundamentos da nuvem e publique aplicações escaláveis e seguras.</p>
+          <a class="curso-link" href="#contato">Saiba Mais →</a>
+        </article>
+
+        <article class="curso">
+          <div class="curso-topo">
+            <span class="curso-numero cor-6">06</span>
+            <span class="curso-categoria">Segurança</span>
+          </div>
+          <h3>Cibersegurança</h3>
+          <p>Proteja sistemas e dados com práticas essenciais de segurança digital.</p>
+          <a class="curso-link" href="#contato">Saiba Mais →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Professores -->
+    <section id="professores" class="container secao">
+      <div class="secao-topo">
+        <div>
+          <span class="secao-etiqueta">Quem ensina</span>
+          <h2>Alguns dos nossos professores</h2>
+        </div>
+      </div>
+
+      <div class="professores">
+        <article class="professor">
+          <img src="https://tse1.mm.bing.net/th/id/OIP.VKRKpHUH1j2o7hh9jeD5JgHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+            alt="" class="professor-1">
+          <h3>Marina Souza</h3>
+          <span class="professor-area">Desenvolvimento Web</span>
+          <p>Desenvolvedora front-end há 10 anos, apaixonada por ensinar HTML, CSS e JavaScript do jeito mais prático
+            possível.</p>
+        </article>
+
+        <article class="professor">
+          <img
+            src="https://img.freepik.com/fotos-gratis/retrato-de-homem-feliz-com-oculos-e-camisa-branca_1142-54586.jpg"
+            alt="" class="professor-2">
+          <h3>Rafael Lima</h3>
+          <span class="professor-area">Ciência de Dados</span>
+          <p>Cientista de dados com mestrado em estatística. Transforma números complicados em explicações simples.</p>
+        </article>
+
+        <article class="professor">
+          <img
+            src="https://tse4.mm.bing.net/th/id/OIP.Pe3g18DqfOBRipo0FmTYTwHaHa?r=0&pid=ImgDet&w=203&h=203&c=7&o=7&rm=3"
+            alt="" class="professor-3">
+          <h3>Camila Andrade</h3>
+          <span class="professor-area">UX/UI Design</span>
+          <p>Designer de produtos digitais que já trabalhou em startups e ensina a criar telas bonitas e fáceis de usar.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 5. Área de estatísticas -->
+    <section class="estatisticas">
+      <div class="container">
+        <div class="estatisticas-titulo">
+          <span class="secao-etiqueta">Conhecimento que transforma</span>
+          <h2>Números que contam nossa história</h2>
+        </div>
+
+        <div class="estatisticas-lista">
+          <div class="estatistica estatistica-grow-1">
+            <strong>5.000+</strong>
+            <span>Alunos</span>
+          </div>
+          <div class="estatistica estatistica-grow-2">
+            <strong>120</strong>
+            <span>Cursos</span>
+          </div>
+          <div class="estatistica estatistica-shrink">
+            <strong>80</strong>
+            <span>Professores</span>
+          </div>
+          <div class="estatistica estatistica-self">
+            <strong>95%</strong>
+            <span>Satisfação</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 6. Rodapé -->
+  <footer id="contato" class="rodape">
+    <div class="container">
+      <div class="rodape-topo">
+        <div class="rodape-redes">
+          <a href="#instagram">Instagram</a>
+          <a href="#linkedin">LinkedIn</a>
+          <a href="#youtube">YouTube</a>
+        </div>
+
+        <div class="rodape-contato">
+          <p class="rodape-nome">Techpage</p>
+          <a class="rodape-email" href="mailto:contato@techpage.com.br">contato@techpage.com.br</a>
+          <!-- aqui eu usei o mailto: pra quando clicar abrir o e-mail -->
+        </div>
+      </div>
+
+      <p class="rodape-direitos">© 2025 Techpage. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
